@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowUpRight } from "lucide-react"
+import { Github } from "lucide-react"
 import Image from "next/image"
 
 export default function Projects() {
@@ -12,8 +12,9 @@ export default function Projects() {
       description:
         "Cyber Shield is a machine-learning-driven platform that uses NLP to detect fraudulent transactions and phishing emails.",
       technologies: ["Python", "NLP", "Machine Learning", "Scikit-learn", "Text Classification", "Threat Detection"],
-      image: "/images/image.png",
-      github: "#",
+      image: "/images/cyber-shield-dashboard.jpg",
+      github: "https://github.com",
+      showIcons: true,
     },
     {
       title: "Radar-CME",
@@ -21,8 +22,9 @@ export default function Projects() {
       description:
         "Radar-CME is a machine learning system that predicts coronal mass ejections (CMEs) using real-time and historical space weather data from NOAA.",
       technologies: ["Python", "Scikit-learn", "PyTorch", "NOAA datasets", "Pandas", "NumPy"],
-      image: "/images/image.png",
-      github: "#",
+      image: "/images/radar-cme-space-weather.jpg",
+      github: "https://github.com",
+      showIcons: true,
     },
     {
       title: "Finlytics",
@@ -30,8 +32,9 @@ export default function Projects() {
       description:
         "Financial insights dashboard with AI-driven investment predictions and spending analysis using machine learning and data visualizations.",
       technologies: ["React", "Next.js", "Python", "LLM APIs", "SQL", "Data Visualization"],
-      image: "/financial-analytics-dashboard-ai-predictions.jpg",
-      github: "#",
+      image: "/images/finlytics-financial-dashboard.jpg",
+      github: "https://github.com",
+      showIcons: true,
     },
     {
       title: "Mode Metric",
@@ -49,8 +52,9 @@ export default function Projects() {
         "FastAPI",
         "Docker",
       ],
-      image: "/images/image.png",
-      github: "#",
+      image: "/images/mode-metric-analytics.png",
+      github: "https://github.com",
+      showIcons: true,
     },
   ]
 
@@ -93,7 +97,7 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {projects.map((project) => (
             <motion.div key={project.title} variants={itemVariants}>
@@ -108,13 +112,9 @@ export default function Projects() {
                     alt={project.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                     priority={false}
                   />
-
-                  <div className="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm rounded-full p-2 group-hover:bg-primary transition-colors">
-                    <ArrowUpRight className="w-5 h-5 text-background" />
-                  </div>
                 </div>
 
                 {/* Gradient overlay on hover */}
@@ -122,12 +122,32 @@ export default function Projects() {
 
                 {/* Content Container - Grows to fill available space */}
                 <div className="relative z-10 p-6 flex flex-col flex-1">
-                  {/* Header with title and category */}
                   <div className="flex-1 mb-3">
-                    <h3 className="font-bold text-xl lg:text-2xl group-hover:text-primary transition-colors leading-tight">
-                      {project.title}
-                    </h3>
-                    <p className="text-xs lg:text-sm text-primary font-medium mt-1">{project.category}</p>
+                    <div className="flex items-start gap-3">
+                      <div className="flex-1">
+                        <h3 className="font-bold text-xl lg:text-2xl group-hover:text-primary transition-colors leading-tight">
+                          {project.title}
+                        </h3>
+                        <p className="text-xs lg:text-sm text-primary font-medium mt-1">{project.category}</p>
+                      </div>
+                      {project.showIcons && (
+                        <div className="flex items-center gap-2 flex-shrink-0 mt-1">
+                          <Github className="w-5 h-5 lg:w-6 lg:h-6 text-primary/60 group-hover:text-primary transition-colors" />
+                          <svg
+                            className="w-5 h-5 lg:w-6 lg:h-6 text-primary/60 group-hover:text-primary transition-colors"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M7 17V7m0 0L3 3m0 0L7 7m0 0L3 3m0 0h8m4 0v10m0 0l4 4m0 0l-4-4m0 0l4 4m0 0h-8" />
+                            <path d="M14 7h7M7 14h7" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
                   </div>
 
                   {/* Description - Limited to 2-3 lines */}
@@ -136,7 +156,7 @@ export default function Projects() {
                   </p>
 
                   {/* Tech Stack Tags - Wrapping layout */}
-                  <div className="flex flex-wrap gap-2 mb-6">
+                  <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <motion.span
                         key={tech}
@@ -147,14 +167,6 @@ export default function Projects() {
                       </motion.span>
                     ))}
                   </div>
-
-                  {/* Action Link - Pinned to bottom */}
-                  <motion.div whileHover={{ x: 4 }} className="inline-flex items-center gap-2 mt-auto">
-                    <span className="inline-flex items-center gap-2 text-sm lg:text-base font-medium text-primary group-hover:gap-3 transition-all">
-                      <ArrowUpRight className="w-4 h-4" />
-                      Go Live
-                    </span>
-                  </motion.div>
                 </div>
               </a>
             </motion.div>
