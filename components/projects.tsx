@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
+import Image from "next/image"
 
 export default function Projects() {
   const projects = [
@@ -11,7 +12,7 @@ export default function Projects() {
       description:
         "Cyber Shield is a machine-learning-driven platform that uses NLP to detect fraudulent transactions and phishing emails.",
       technologies: ["Python", "NLP", "Machine Learning", "Scikit-learn", "Text Classification", "Threat Detection"],
-      icon: "🛡️",
+      image: "/images/image.png",
       github: "#",
     },
     {
@@ -20,7 +21,7 @@ export default function Projects() {
       description:
         "Radar-CME is a machine learning system that predicts coronal mass ejections (CMEs) using real-time and historical space weather data from NOAA.",
       technologies: ["Python", "Scikit-learn", "PyTorch", "NOAA datasets", "Pandas", "NumPy"],
-      icon: "🌍",
+      image: "/images/image.png",
       github: "#",
     },
     {
@@ -29,16 +30,26 @@ export default function Projects() {
       description:
         "Financial insights dashboard with AI-driven investment predictions and spending analysis using machine learning and data visualizations.",
       technologies: ["React", "Next.js", "Python", "LLM APIs", "SQL", "Data Visualization"],
-      icon: "📊",
+      image: "/financial-analytics-dashboard-ai-predictions.jpg",
       github: "#",
     },
     {
-      title: "QuantumFin",
-      category: "AI Finance Assistant",
+      title: "Mode Metric",
+      category: "AI-Powered Analytics",
       description:
-        "QuantumFin is a full-stack AI-powered financial assistant that tracks expenses, manages budgets, and provides conversational insights with automated categorization.",
-      technologies: ["React", "Next.js", "Node.js", "Python", "LLM APIs", "SQL / NoSQL"],
-      icon: "💰",
+        "Mode Metric predicts user churn and enables proactive retention strategies by analyzing user behavior, engagement patterns, and historical data to identify at-risk customers.",
+      technologies: [
+        "Python",
+        "Scikit-learn",
+        "PyTorch",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "FastAPI",
+        "Docker",
+      ],
+      image: "/images/image.png",
       github: "#",
     },
   ]
@@ -64,7 +75,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,47 +93,70 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          className="grid md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         >
-          {projects.map((project, idx) => (
+          {projects.map((project) => (
             <motion.div key={project.title} variants={itemVariants}>
-              <div className="group relative p-6 bg-card rounded-lg border-2 border-primary/50 hover:border-primary transition-all hover:shadow-xl h-full overflow-hidden">
+              <a
+                href={project.github}
+                className="group relative overflow-hidden bg-card rounded-lg border-2 border-primary/50 hover:border-primary transition-all hover:shadow-xl h-full flex flex-col block"
+              >
+                {/* Image Container - Fixed aspect ratio (16:9) */}
+                <div className="relative w-full aspect-video bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden flex-shrink-0">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={false}
+                  />
+
+                  <div className="absolute top-4 right-4 bg-primary/80 backdrop-blur-sm rounded-full p-2 group-hover:bg-primary transition-colors">
+                    <ArrowUpRight className="w-5 h-5 text-background" />
+                  </div>
+                </div>
+
+                {/* Gradient overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <div className="relative z-10">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h3 className="font-bold text-lg group-hover:text-primary transition-colors">{project.title}</h3>
-                      <p className="text-xs text-primary font-medium">{project.category}</p>
-                    </div>
-                    <span className="text-2xl">{project.icon}</span>
+                {/* Content Container - Grows to fill available space */}
+                <div className="relative z-10 p-6 flex flex-col flex-1">
+                  {/* Header with title and category */}
+                  <div className="flex-1 mb-3">
+                    <h3 className="font-bold text-xl lg:text-2xl group-hover:text-primary transition-colors leading-tight">
+                      {project.title}
+                    </h3>
+                    <p className="text-xs lg:text-sm text-primary font-medium mt-1">{project.category}</p>
                   </div>
 
-                  <p className="text-sm text-muted-foreground mb-6 leading-relaxed">{project.description}</p>
+                  {/* Description - Limited to 2-3 lines */}
+                  <p className="text-sm lg:text-base text-muted-foreground mb-6 leading-relaxed line-clamp-3 flex-1">
+                    {project.description}
+                  </p>
 
+                  {/* Tech Stack Tags - Wrapping layout */}
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech) => (
                       <motion.span
                         key={tech}
                         whileHover={{ scale: 1.05 }}
-                        className="px-2.5 py-1 bg-primary/10 text-primary text-xs rounded font-medium hover:bg-primary/20 transition-colors"
+                        className="px-3 py-1 bg-transparent border border-green-500/50 text-foreground text-xs lg:text-sm rounded font-medium hover:border-green-500 hover:bg-green-500/10 transition-all whitespace-nowrap"
                       >
                         {tech}
                       </motion.span>
                     ))}
                   </div>
 
-                  <motion.div whileHover={{ x: 4 }} className="inline-flex items-center gap-2">
-                    <a
-                      href={project.github}
-                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:gap-3 transition-all"
-                    >
-                      <Github className="w-4 h-4" />
-                      View Code
-                    </a>
+                  {/* Action Link - Pinned to bottom */}
+                  <motion.div whileHover={{ x: 4 }} className="inline-flex items-center gap-2 mt-auto">
+                    <span className="inline-flex items-center gap-2 text-sm lg:text-base font-medium text-primary group-hover:gap-3 transition-all">
+                      <ArrowUpRight className="w-4 h-4" />
+                      Go Live
+                    </span>
                   </motion.div>
                 </div>
-              </div>
+              </a>
             </motion.div>
           ))}
         </motion.div>

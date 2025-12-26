@@ -8,7 +8,6 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>&copy; {currentYear} Durga Prasad Seelam. All rights reserved.</p>
-          <p>Crafted with React & Tailwind CSS</p>
         </div>
       </div>
     </footer>

@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Script from "next/script"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     "Web Development",
     "AI Solutions",
     "Machine Learning",
-    "Pune",
+    "Hyderabad",
     "Durga Prasad",
     "durga prasad seelam",
     "durga prasad portfolio",
@@ -63,7 +64,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-L3XQRP3SR9" />
         <Script
@@ -93,7 +94,7 @@ export default function RootLayout({
               email: "seelamdurgaprasad5442@gmail.com",
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Pune",
+                addressLocality: "Hyderabad",
                 addressCountry: "IN",
               },
               sameAs: ["https://www.linkedin.com/in/durga-prasad/", "https://github.com/durgaprasad"],
@@ -111,7 +112,9 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans antialiased`}>
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {children}
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, Download, Sparkles } from "lucide-react"
+import { ArrowRight, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import { TextGenerateEffect } from "./aceternity/text-generate-effect"
@@ -111,13 +111,14 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </motion.a>
             <motion.a
-              href="#contact"
+              href="user_read_only_context/text_attachments/resume1-PnyqX.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-primary/50 rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
               whileHover={prefersReducedMotion ? {} : { scale: 1.05, y: -2 }}
               whileTap={prefersReducedMotion ? {} : { scale: 0.95 }}
             >
               View Resume
-              <Download className="w-4 h-4" aria-hidden="true" />
             </motion.a>
           </motion.div>
 

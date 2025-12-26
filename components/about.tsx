@@ -26,35 +26,39 @@ export default function About() {
 
   const highlights = [
     {
-      title: "Design to Code",
+      title: "Full Stack Development",
       description:
-        "Converting pixel-perfect Figma/PSD designs into production-ready React applications with precision.",
+        "Building scalable web applications with React, Next.js, Node.js, and modern web technologies for production environments.",
       icon: <Code2 size={28} strokeWidth={1.5} className="text-primary" />,
     },
     {
-      title: "Team Leadership",
+      title: "AI & Machine Learning",
       description:
-        "Led UI/frontend teams of 5+ designers, fostering collaboration and delivering high-quality interfaces.",
-      icon: <Users size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "Accessibility First",
-      description: "Committed to WCAG 2.2 AA standards, ensuring inclusive experiences for all users.",
-      icon: <Shield size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "Performance",
-      description: "Optimizing web applications for speed, efficiency, and modern web standards compliance.",
-      icon: <Zap size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "Creative Problem Solving",
-      description: "Tackling complex UI challenges with innovative solutions and attention to detail.",
+        "Developing AI-powered solutions using LLMs, TensorFlow, Scikit-learn, and prompt engineering for intelligent applications.",
       icon: <Lightbulb size={28} strokeWidth={1.5} className="text-primary" />,
     },
     {
-      title: "Continuous Learning",
-      description: "Staying updated with latest technologies, frameworks, and design trends in web development.",
+      title: "Database Design",
+      description:
+        "Designing and managing databases with MongoDB, Firebase, and PostgreSQL for optimal data storage and retrieval.",
+      icon: <Shield size={28} strokeWidth={1.5} className="text-primary" />,
+    },
+    {
+      title: "DevOps & Deployment",
+      description:
+        "Deploying applications on Vercel, Render, Netlify, and AWS with Git workflows and CI/CD integration.",
+      icon: <Zap size={28} strokeWidth={1.5} className="text-primary" />,
+    },
+    {
+      title: "Responsive Design",
+      description:
+        "Creating beautiful, responsive UIs with Tailwind CSS and modern design principles for all device sizes.",
+      icon: <Users size={28} strokeWidth={1.5} className="text-primary" />,
+    },
+    {
+      title: "Problem Solving",
+      description:
+        "Solving complex technical challenges with innovative approaches and a focus on clean, maintainable code.",
       icon: <BookOpen size={28} strokeWidth={1.5} className="text-primary" />,
     },
   ]
@@ -124,7 +128,7 @@ export default function About() {
             <h3 className="text-2xl font-bold mb-8 text-foreground">Quick Info</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { label: "Location", value: "Pune, India", icon: <MapPin size={24} strokeWidth={1.5} /> },
+                { label: "Location", value: "Hyderabad, India", icon: <MapPin size={24} strokeWidth={1.5} /> },
                 {
                   label: "Email",
                   value: "seelamdurgaprasad5442@gmail.com",
