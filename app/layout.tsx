@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Script from "next/script"
-import { ThemeProvider } from "@/components/theme-provider"
+import ThemeProvider from "@/components/theme-provider"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -12,7 +12,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Durga Prasad Seelam | Full Stack Developer & AI Engineer | Portfolio",
   description:
-    "Full Stack Developer & AI Engineer with 9.5+ years of experience building scalable, high-performance applications. Specializing in React, Node.js, Python, and AI-powered solutions.",
+    "Full Stack Developer & AI Engineer with building scalable, high-performance applications. Specializing in React, Node.js, Python, and AI-powered solutions.",
   keywords: [
     "Full Stack Developer",
     "AI Engineer",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Durga Prasad Seelam | Full Stack Developer & AI Engineer",
     description:
-      "Full Stack Developer & AI Engineer with 9.5+ years of experience building scalable, high-performance applications.",
+      "Full Stack Developer & AI Engineer with  building scalable, high-performance applications.",
     type: "website",
     locale: "en_US",
     url: "https://durgaprasadseelam.com",
@@ -40,10 +40,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Durga Prasad Seelam | Full Stack Developer & AI Engineer",
     description:
-      "Full Stack Developer & AI Engineer with 9.5+ years of experience building scalable, high-performance applications.",
+      "Full Stack Developer & AI Engineer  building scalable, high-performance applications.",
   },
   alternates: {
-    canonical: "https://durgaprasadseelam.com",
+    canonical: "resume1.pdf",
   },
   robots: {
     index: true,
