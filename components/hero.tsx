@@ -111,7 +111,7 @@ export default function Hero() {
               <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </motion.a>
             <motion.a
-              href="https://docs.google.com/document/d/1HODLoKM_YhoyPj-ceBBudrmNmI9czxhib2zdf5m1Zeo/preview?tab=t.0"
+              href="https://drive.google.com/file/d/1lVdvJInAd88AyDCPG_qfEBB-kO_qP4OA/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-primary/50 rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
