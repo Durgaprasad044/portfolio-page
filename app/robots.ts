@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://durgaprasad04portfolio.vercel.app",
+    sitemap: "https://nikitesh.com/sitemap.xml",
   }
 }
