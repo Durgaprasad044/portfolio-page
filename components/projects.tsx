@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github } from "lucide-react"
+import { Github, ExternalLink } from "lucide-react"
 import Image from "next/image"
 
 export default function Projects() {
@@ -14,7 +14,7 @@ export default function Projects() {
       technologies: ["Python", "NLP", "Machine Learning", "Scikit-learn", "Text Classification", "Threat Detection"],
       image: "/images/cyber-shield-dashboard.jpg",
       github: "https://github.com/Durgaprasad044/CyberShield",
-      showIcons:"https://cybershield-2.onrender.com",
+      liveDemo:"https://cybershield-2.onrender.com",
     },
     {
       title: "Radar-CME",
@@ -23,8 +23,7 @@ export default function Projects() {
         "Radar-CME is a machine learning system that predicts coronal mass ejections (CMEs) using real-time and historical space weather data from NOAA.",
       technologies: ["Python", "Scikit-learn", "PyTorch", "NOAA datasets", "Pandas", "NumPy"],
       image: "/images/radar-cme-space-weather.jpg",
-      github: "https://github.com",
-      showIcons: true,
+      github: "https://github.com/Ravitheja1289-dot/RADAR-CME",
     },
     {
       title: "Finlytics",
@@ -33,11 +32,11 @@ export default function Projects() {
         "Financial insights dashboard with AI-driven investment predictions and spending analysis using machine learning and data visualizations.",
       technologies: ["React", "Next.js", "Python", "LLM APIs", "SQL", "Data Visualization"],
       image: "/images/finlytics-financial-dashboard.jpg",
-      github: "https://github.com",
-      showIcons: true,
+      github: "https://github.com/Durgaprasad044/AD-01/tree/main/project",
+      liveDemo: "https://finlytics-2cgt.onrender.com",
     },
     {
-      title: "Mode Metric",
+      title: "Retain Rover",
       category: "AI-Powered Analytics",
       description:
         "Mode Metric predicts user churn and enables proactive retention strategies by analyzing user behavior, engagement patterns, and historical data to identify at-risk customers.",
@@ -53,8 +52,8 @@ export default function Projects() {
         "Docker",
       ],
       image: "/images/mode-metric-analytics.png",
-      github: "https://github.com",
-      showIcons: true,
+      github: "https://github.com/Ravitheja1289-dot/RetainRover",
+      liveDemo: "https://retainrover.streamlit.app/",
     },
   ]
 
@@ -101,9 +100,8 @@ export default function Projects() {
         >
           {projects.map((project) => (
             <motion.div key={project.title} variants={itemVariants}>
-              <a
-                href={project.github}
-                className="group relative overflow-hidden bg-card rounded-lg border-2 border-primary/50 hover:border-primary transition-all hover:shadow-xl h-full flex flex-col block"
+              <div
+                className="group relative overflow-hidden bg-card rounded-lg border-2 border-primary/50 hover:border-primary transition-all hover:shadow-xl h-full flex flex-col"
               >
                 {/* Image Container - Fixed aspect ratio (16:9) */}
                 <div className="relative w-full aspect-video bg-gradient-to-br from-primary/10 to-primary/5 overflow-hidden flex-shrink-0">
@@ -130,23 +128,28 @@ export default function Projects() {
                         </h3>
                         <p className="text-xs lg:text-sm text-primary font-medium mt-1">{project.category}</p>
                       </div>
-                      {project.showIcons && (
-                        <div className="flex items-center gap-2 flex-shrink-0 mt-1">
-                          <Github className="w-5 h-5 lg:w-6 lg:h-6 text-primary/60 group-hover:text-primary transition-colors" />
-                          <svg
-                            className="w-5 h-5 lg:w-6 lg:h-6 text-primary/60 group-hover:text-primary transition-colors"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
+                      <div className="flex items-center gap-3 flex-shrink-0 mt-1">
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary/60 hover:text-primary transition-colors"
+                          title="View Code"
+                        >
+                          <Github className="w-5 h-5 lg:w-6 lg:h-6" />
+                        </a>
+                        {project.liveDemo && (
+                          <a
+                            href={typeof project.liveDemo === "string" ? project.liveDemo : "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold hover:bg-primary/20 transition-all border border-primary/20"
                           >
-                            <path d="M7 17V7m0 0L3 3m0 0L7 7m0 0L3 3m0 0h8m4 0v10m0 0l4 4m0 0l-4-4m0 0l4 4m0 0h-8" />
-                            <path d="M14 7h7M7 14h7" />
-                          </svg>
-                        </div>
-                      )}
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            <span>LIVE DEMO</span>
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
 
@@ -168,7 +171,7 @@ export default function Projects() {
                     ))}
                   </div>
                 </div>
-              </a>
+              </div>
             </motion.div>
           ))}
         </motion.div>

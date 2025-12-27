@@ -37,12 +37,7 @@ export default function Contact() {
       href: "https://www.linkedin.com/in/seelam-durga-prasad/",
       color: "hover:text-blue-400",
     },
-    {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com",
-      color: "hover:text-cyan-400",
-    },
+    
     {
       icon: Mail,
       label: "Email",
