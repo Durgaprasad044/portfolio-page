@@ -27,7 +27,7 @@ export default function Projects() {
       description:
         "Cyber Shield is a machine-learning-driven platform that uses NLP to detect fraudulent transactions and phishing emails.",
       technologies: ["Python", "NLP", "Machine Learning", "Scikit-learn", "Text Classification", "Threat Detection"],
-      image: "/images/cyber-sheild-dashboard.png",
+      image: "/images/Cyber-sheild-dashboard.png",
       github: "https://github.com/Durgaprasad044/CyberShield",
       liveDemo:"https://cybershield-2.onrender.com",
     },
