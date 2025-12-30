@@ -112,7 +112,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`font-sans antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" enableSystem={false}>
           {children}
         </ThemeProvider>
         <Analytics />

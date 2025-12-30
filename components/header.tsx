@@ -2,12 +2,10 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Menu, X } from "lucide-react"
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -61,17 +59,6 @@ export default function Header() {
 
             {/* Right Actions */}
             <div className="flex items-center gap-4">
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="p-2 hover:bg-secondary rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-                aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5 text-yellow-500" />
-                ) : (
-                  <Moon className="w-5 h-5 text-slate-700" />
-                )}
-              </button>
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}

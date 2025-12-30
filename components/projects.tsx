@@ -39,6 +39,7 @@ export default function Projects() {
       technologies: ["Python", "Scikit-learn", "PyTorch", "NOAA datasets", "Pandas", "NumPy"],
       image: "/images/radar-cme-space-weather.jpg",
       github: "https://github.com/Ravitheja1289-dot/RADAR-CME",
+      liveDemo:"radar-cme.vercel.app",
     },
     {
       title: "Finlytics",
