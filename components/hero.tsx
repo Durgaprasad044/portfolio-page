@@ -126,7 +126,7 @@ export default function Hero() {
             {[
               { value: "20+", label: "Projects Built" },
               { value: "6", label: "Team Lead" },
-              { value: "1", label: "Research Paper" },
+              { value: "1", label: "Working on  a Research Paper" },
             ].map((stat, idx) => (
               <motion.div
                 key={idx}
