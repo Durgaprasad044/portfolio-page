@@ -6,13 +6,28 @@ import Image from "next/image"
 
 export default function Projects() {
   const projects = [
+    {title: "Mediscan",
+      category: "AI Medical Imaging & Diagnostics",
+      description:
+        "AI-powered medical imaging platform for disease detection and clinical decision support, enabling analysis of X-rays, CT scans, and MRI images with deep learning models and intelligent report generation.",
+      technologies: ["Python",
+              "PyTorch",
+              "FastAPI",
+              "Computer Vision",
+              "Deep Learning",
+              "React",
+              "LLM APIs"],
+      image: "/images/Mediscan.png",
+      github: "https://github.com/Durgaprasad044/CyberShield",
+
+    },
     {
       title: "Cyber Shield",
       category: "Security & Fraud Detection",
       description:
         "Cyber Shield is a machine-learning-driven platform that uses NLP to detect fraudulent transactions and phishing emails.",
       technologies: ["Python", "NLP", "Machine Learning", "Scikit-learn", "Text Classification", "Threat Detection"],
-      image: "/images/cyber-shield-dashboard.jpg",
+      image: "/images/cyber-sheild-dashboard.png",
       github: "https://github.com/Durgaprasad044/CyberShield",
       liveDemo:"https://cybershield-2.onrender.com",
     },
@@ -31,7 +46,7 @@ export default function Projects() {
       description:
         "Financial insights dashboard with AI-driven investment predictions and spending analysis using machine learning and data visualizations.",
       technologies: ["React", "Next.js", "Python", "LLM APIs", "SQL", "Data Visualization"],
-      image: "/images/finlytics-financial-dashboard.jpg",
+      image: "/images/Finlytics.png",
       github: "https://github.com/Durgaprasad044/AD-01/tree/main/project",
       liveDemo: "https://finlytics-2cgt.onrender.com",
     },
@@ -55,6 +70,26 @@ export default function Projects() {
       github: "https://github.com/Ravitheja1289-dot/RetainRover",
       liveDemo: "https://retainrover.streamlit.app/",
     },
+    {
+  title: "MetAI",
+  category: "AI-Powered Cryptocurrency Portfolio",
+  description:
+    "A modern, minimal cryptocurrency portfolio and AI assistant application that enables users to track crypto holdings, analyze market trends, visualize portfolio performance, and interact with an AI-powered assistant using real-time market data and voice input.",
+  technologies: [
+    "React 19",
+    "Tailwind CSS v4",
+    "React Router",
+    "Recharts",
+    "CoinGecko API",
+    "Axios",
+    "Lucide React",
+    "Speech Recognition"
+  ],
+  image: "/images/Meta-ai.png",
+  github: "https://github.com/Durgaprasad044/GDG",
+  liveDemo:"https://gdg-cpnd.vercel.app",
+}
+
   ]
 
   const containerVariants = {
@@ -96,7 +131,7 @@ export default function Projects() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
           {projects.map((project) => (
             <motion.div key={project.title} variants={itemVariants}>
@@ -110,7 +145,7 @@ export default function Projects() {
                     alt={project.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     priority={false}
                   />
                 </div>
